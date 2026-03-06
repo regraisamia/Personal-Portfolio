@@ -98,6 +98,7 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    display: inline-block;
 }
 
 .nav-link::after {
@@ -1324,31 +1325,6 @@ body {
 .fun-fact {
     position: relative;
     padding-left: 3rem;
-}
-
-/* Animated Underlines for Links */
-.nav-link,
-.project-link {
-    position: relative;
-    overflow: hidden;
-}
-
-.nav-link::before,
-.project-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover::before,
-.project-link:hover::before {
-    transform: translateX(0);
 }
 
 /* Stats Visual Enhancement */
