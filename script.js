@@ -36,7 +36,6 @@ async function fetchGitHubProjects() {
     const username = 'regraisamia';
     const projectsGrid = document.getElementById('projectsGrid');
     
-    // Set timeout of 5 seconds
     const timeout = new Promise((_, reject) => 
         setTimeout(() => reject(new Error('Timeout')), 5000)
     );
@@ -53,7 +52,7 @@ async function fetchGitHubProjects() {
         
         const filteredRepos = repos.filter(repo => {
             const name = repo.name.toLowerCase();
-            return name !== 'regraisamia' && name !== 'regrai-samia' && name !== 'e-commerce' && name !== 'personal-portfolio';
+            return !repo.fork && name !== 'regraisamia' && name !== 'regrai-samia' && name !== 'e-commerce';
         });
         
         if (filteredRepos.length === 0) {
@@ -61,8 +60,27 @@ async function fetchGitHubProjects() {
             return;
         }
         
-        // Display projects immediately without waiting for READMEs
-        displayProjects(filteredRepos.slice(0, 10));
+        // Fetch README for top 10 repos
+        const projectsWithReadme = await Promise.all(
+            filteredRepos.slice(0, 10).map(async (repo) => {
+                try {
+                    const readmeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/readme`, {
+                        headers: { 'Accept': 'application/vnd.github.v3+json' }
+                    });
+                    if (readmeResponse.ok) {
+                        const readmeData = await readmeResponse.json();
+                        const readmeContent = atob(readmeData.content);
+                        const description = extractDescription(readmeContent);
+                        return { ...repo, description: description || repo.description };
+                    }
+                } catch (error) {
+                    console.log(`No README for ${repo.name}`);
+                }
+                return repo;
+            })
+        );
+        
+        displayProjects(projectsWithReadme);
         
     } catch (error) {
         console.error('Error fetching projects:', error);
