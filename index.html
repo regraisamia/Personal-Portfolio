@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samia Regrai - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Samia Regrai</div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="lang-toggle" id="langToggle">
+                    <i class="fas fa-language"></i> <span id="langText">EN</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-fr="Accueil">Accueil</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-fr="À propos">À propos</a></li>
+                <li><a href="#skills" class="nav-link" data-en="Skills" data-fr="Compétences">Compétences</a></li>
+                <li><a href="#experience" class="nav-link" data-en="Experience" data-fr="Expérience">Expérience</a></li>
+                <li><a href="#projects" class="nav-link" data-en="Projects" data-fr="Projets">Projets</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-fr="Contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="code-snippet" data-en="print('Hello World!')" data-fr="print('Bonjour Monde!')">print('Bonjour Monde!')</div>
+                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Samia Regrai</span></h1>
+                <p class="hero-subtitle">Master Business Intelligence & Big Data Analytics</p>
+                <p class="hero-description" data-en="Passionate student in AI, Machine Learning, Multi-Agent Systems and data analytics" data-fr="Étudiante passionnée par l'IA, le Machine Learning, les Systèmes Multi-Agents et l'analyse de données">Étudiante passionnée par l'IA, le Machine Learning, les Systèmes Multi-Agents et l'analyse de données</p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label" data-en="Internships" data-fr="Stages">Stages</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-label" data-en="Projects" data-fr="Projets">Projets</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="11">0</span>
+                        <span class="stat-label" data-en="Certifications" data-fr="Certifications">Certifications</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary" data-en="Get In Touch" data-fr="Me Contacter">Me Contacter</a>
+                    <a href="#projects" class="btn btn-secondary" data-en="View Projects" data-fr="Voir Projets">Voir Projets</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/regraisamia" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/regraisamia" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:regraisamia1@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-fr="À Propos">À Propos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="fun-fact" data-en="💡 Fun fact: I speak 4 languages - Arabic, French, English & Tamazight!" data-fr="💡 Fun fact: Je parle 4 langues - Arabe, Français, Anglais & Tamazight!">💡 Fun fact: Je parle 4 langues - Arabe, Français, Anglais & Tamazight!</div>
+                    <p data-en="Master's student in Business Intelligence & Big Data Analytics at Chouaib Doukkali University. Passionate about artificial intelligence, machine learning and big data analytics." data-fr="Étudiante en Master Recherche Business Intelligence & Big Data Analytics à l'Université Chouaib Doukkali. Passionnée par l'intelligence artificielle, le machine learning et l'analyse de données massives.">Étudiante en Master Recherche Business Intelligence & Big Data Analytics à l'Université Chouaib Doukkali. Passionnée par l'intelligence artificielle, le machine learning et l'analyse de données massives.</p>
+                    <p data-en="My expertise covers intelligent application development using Python, NLP, multi-agent systems, and data visualization with Power BI. Experience in web development, databases and computer networks." data-fr="Mon expertise couvre le développement d'applications intelligentes utilisant Python, NLP, les systèmes multi-agents, ainsi que la visualisation de données avec Power BI. Expérience en développement web, bases de données et réseaux informatiques.">Mon expertise couvre le développement d'applications intelligentes utilisant Python, NLP, les systèmes multi-agents, ainsi que la visualisation de données avec Power BI. Expérience en développement web, bases de données et réseaux informatiques.</p>
+                    <div class="journey-timeline">
+                        <div class="journey-item">
+                            <span class="journey-year">2021</span>
+                            <span class="journey-text" data-en="Started BTS in IT Systems & Networks" data-fr="Début BTS Systèmes & Réseaux">Début BTS Systèmes & Réseaux</span>
+                        </div>
+                        <div class="journey-item">
+                            <span class="journey-year">2023</span>
+                            <span class="journey-text" data-en="Discovered passion for Big Data" data-fr="Découverte passion Big Data">Découverte passion Big Data</span>
+                        </div>
+                        <div class="journey-item">
+                            <span class="journey-year">2024</span>
+                            <span class="journey-text" data-en="Master's in BI & Big Data Analytics" data-fr="Master BI & Big Data Analytics">Master BI & Big Data Analytics</span>
+                        </div>
+                        <div class="journey-item">
+                            <span class="journey-year">2025</span>
+                            <span class="journey-text" data-en="Working on Multi-Agent AI Systems" data-fr="Travail sur Systèmes IA Multi-Agents">Travail sur Systèmes IA Multi-Agents</span>
+                        </div>
+                    </div>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>El Jadida, Maroc</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+212 622 067 493</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>regraisamia1@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-en="Skills & Technologies" data-fr="Compétences & Technologies">Compétences & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> <span data-en="Languages" data-fr="Langages">Langages</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">R</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-bar"></i> BI & <span data-en="Analysis" data-fr="Analyse">Analyse</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Data & IA</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">SMA</span>
+                        <span class="skill-tag" data-en="Graphs" data-fr="Graphes">Graphes</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-globe"></i> Web & APIs</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> <span data-en="Databases" data-fr="Bases de Données">Bases de Données</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Neo4j</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Hadoop</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> <span data-en="Networks & Systems" data-fr="Réseaux & Systèmes">Réseaux & Systèmes</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CCNA 1-4</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">RDF/OWL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title" data-en="Certifications & Achievements" data-fr="Certifications & Réalisations">Certifications & Réalisations</h2>
+            <div class="certifications-grid">
+                <div class="cert-badge">
+                    <div class="cert-icon">🏆</div>
+                    <div class="cert-info">
+                        <h4>Neo4j Certified Professional</h4>
+                        <p>Graph Database Expert</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🔬</div>
+                    <div class="cert-info">
+                        <h4>Neo4j Graph Data Science</h4>
+                        <p>Advanced Analytics</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">📊</div>
+                    <div class="cert-info">
+                        <h4>Data Visualization</h4>
+                        <p>Kaggle Learn</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">📈</div>
+                    <div class="cert-info">
+                        <h4>Data Visualization</h4>
+                        <p>FreeCodeCamp</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🐍</div>
+                    <div class="cert-info">
+                        <h4>Data Analysis with Python</h4>
+                        <p>FreeCodeCamp</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🧹</div>
+                    <div class="cert-info">
+                        <h4>Data Cleaning</h4>
+                        <p>Kaggle Learn</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🛠️</div>
+                    <div class="cert-info">
+                        <h4>Feature Engineering</h4>
+                        <p>Kaggle Learn</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🌐</div>
+                    <div class="cert-info">
+                        <h4>Google Analytics</h4>
+                        <p>Google Certification</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">💾</div>
+                    <div class="cert-info">
+                        <h4>Introduction to SQL</h4>
+                        <p>Simplilearn</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🇫🇷</div>
+                    <div class="cert-info">
+                        <h4>DELF B2</h4>
+                        <p data-en="French Language" data-fr="Langue Française">Langue Française</p>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon">🇬🇧</div>
+                    <div class="cert-info">
+                        <h4>EF SET C1 Advanced</h4>
+                        <p data-en="English Language" data-fr="Langue Anglaise">Langue Anglaise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title" data-en="Education" data-fr="Formation">Formation</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3 data-en="Master Business Intelligence & Big Data Analytics" data-fr="Master Business Intelligence & Big Data Analytics">Master Business Intelligence & Big Data Analytics</h3>
+                        <h4>FS – Université Chouaib Doukkali</h4>
+                        <p class="edu-date">2024 - <span data-en="Present" data-fr="Présent">Présent</span> | El Jadida, Maroc</p>
+                        <p class="edu-desc" data-en="Research Master focused on Business Intelligence, Big Data Analytics, Machine Learning and Data Science" data-fr="Master Recherche axé sur la Business Intelligence, l'analyse Big Data, le Machine Learning et la Data Science">Master Recherche axé sur la Business Intelligence, l'analyse Big Data, le Machine Learning et la Data Science</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon">📚</div>
+                    <div class="edu-content">
+                        <h3 data-en="Professional Bachelor's in Big Data" data-fr="Licence Professionnelle Big Data">Licence Professionnelle Big Data</h3>
+                        <h4>EST – Université Sultan Moulay Slimane</h4>
+                        <p class="edu-date">2023 - 2024 | Fquih Ben Saleh, Maroc</p>
+                        <p class="edu-desc" data-en="Final Project: Intelligent web application for CV parsing, classification and job recommendation (Python, ML, NLP)" data-fr="PFE: Application web intelligente de parsing de CV, classification et recommandation d'emploi (Python, ML, NLP)">PFE: Application web intelligente de parsing de CV, classification et recommandation d'emploi (Python, ML, NLP)</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon">💻</div>
+                    <div class="edu-content">
+                        <h3 data-en="BTS IT Systems & Networks" data-fr="BTS Systèmes & Réseaux Informatiques">BTS Systèmes & Réseaux Informatiques</h3>
+                        <h4>Lycée Technique Al-Idrissi</h4>
+                        <p class="edu-date">2021 - 2023 | Agadir, Maroc</p>
+                        <p class="edu-desc" data-en="Technical degree in IT Systems and Networks with focus on infrastructure, security and system administration" data-fr="Diplôme technique en Systèmes et Réseaux Informatiques avec focus sur l'infrastructure, la sécurité et l'administration système">Diplôme technique en Systèmes et Réseaux Informatiques avec focus sur l'infrastructure, la sécurité et l'administration système</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title" data-en="Experience" data-fr="Expérience">Expérience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-en="Project Internship - Multi-Agent Delivery System (AI)" data-fr="Stage Projet - Système Multi-Agents de Livraison (IA)">Stage Projet - Système Multi-Agents de Livraison (IA)</h3>
+                        <h4>Tasmim Web</h4>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> <span data-en="August 2025 - January 2026 | Casablanca" data-fr="Août 2025 - Janvier 2026 | Casablanca">Août 2025 - Janvier 2026 | Casablanca</span></p>
+                        <ul>
+                            <li data-en="Design of an intelligent delivery system based on autonomous agents in Python" data-fr="Conception d'un système intelligent de livraison basé sur des agents autonomes en Python">Conception d'un système intelligent de livraison basé sur des agents autonomes en Python</li>
+                            <li data-en="Using CrewAI, graph modeling and GPS route optimization" data-fr="Utilisation de CrewAI, modélisation par graphes et optimisation d'itinéraires GPS">Utilisation de CrewAI, modélisation par graphes et optimisation d'itinéraires GPS</li>
+                            <li data-en="Improved logistics planning through agent coordination" data-fr="Amélioration de la planification logistique via coordination d'agents">Amélioration de la planification logistique via coordination d'agents</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-en="Final Year Project - CV Parsing & Job Recommendation Application" data-fr="Stage PFE - Application de Parsing de CV & Recommandation d'Emploi">Stage PFE - Application de Parsing de CV & Recommandation d'Emploi</h3>
+                        <h4>Afrika Entourage</h4>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> <span data-en="April 2024 - June 2024 | Agadir" data-fr="Avril 2024 - Juin 2024 | Agadir">Avril 2024 - Juin 2024 | Agadir</span></p>
+                        <ul>
+                            <li data-en="Development of a data-driven web application integrating NLP and ML" data-fr="Développement d'une application web data-driven intégrant NLP et ML">Développement d'une application web data-driven intégrant NLP et ML</li>
+                            <li data-en="Automatic extraction of CV information and profile classification" data-fr="Extraction automatique d'informations de CV et classification des profils">Extraction automatique d'informations de CV et classification des profils</li>
+                            <li data-en="Intelligent job recommendation with high relevance" data-fr="Recommandation intelligente d'offres d'emploi à forte pertinence">Recommandation intelligente d'offres d'emploi à forte pertinence</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-en="Final Year Project - Printing Management Web Application" data-fr="Stage PFE - Application Web de Gestion d'Imprimerie">Stage PFE - Application Web de Gestion d'Imprimerie</h3>
+                        <h4>PCI Print Textil</h4>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> <span data-en="May 2023 - June 2023 | Agadir" data-fr="Mai 2023 - Juin 2023 | Agadir">Mai 2023 - Juin 2023 | Agadir</span></p>
+                        <ul>
+                            <li data-en="Implementation of a web system for order and customer management" data-fr="Réalisation d'un système web pour la gestion des commandes et clients">Réalisation d'un système web pour la gestion des commandes et clients</li>
+                            <li data-en="CRUD architecture with structured database" data-fr="Architecture CRUD avec base de données structurée">Architecture CRUD avec base de données structurée</li>
+                            <li data-en="User interface optimized for daily operations" data-fr="Interface utilisateur optimisée pour les opérations quotidiennes">Interface utilisateur optimisée pour les opérations quotidiennes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-en="Project Internship - Inventory Management Web Application" data-fr="Stage Projet - Application Web de Gestion de Stock">Stage Projet - Application Web de Gestion de Stock</h3>
+                        <h4>Afrika Entourage</h4>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> <span data-en="March 2023 - June 2023 | Agadir" data-fr="Mars 2023 - Juin 2023 | Agadir">Mars 2023 - Juin 2023 | Agadir</span></p>
+                        <ul>
+                            <li data-en="Design of inventory management application with relational database" data-fr="Conception d'une application de gestion de stock avec BD relationnelle">Conception d'une application de gestion de stock avec BD relationnelle</li>
+                            <li data-en="Automation of inputs/outputs and tracking dashboards" data-fr="Automatisation des entrées/sorties et tableaux de suivi">Automatisation des entrées/sorties et tableaux de suivi</li>
+                            <li data-en="Improved operational visibility" data-fr="Amélioration de la visibilité opérationnelle">Amélioration de la visibilité opérationnelle</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-en="Internship - Facial Detection & Networks" data-fr="Stage - Détection Faciale & Réseaux">Stage - Détection Faciale & Réseaux</h3>
+                        <h4>SMA (Société de Manutention Agadir)</h4>
+                        <p class="timeline-date"><i class="fas fa-calendar"></i> <span data-en="July 2022 - August 2022 | Agadir" data-fr="Juillet 2022 - Août 2022 | Agadir">Juillet 2022 - Août 2022 | Agadir</span></p>
+                        <ul>
+                            <li data-en="Development of a facial detection application in Python" data-fr="Développement d'une application de détection faciale en Python">Développement d'une application de détection faciale en Python</li>
+                            <li data-en="Design of LAN network architectures" data-fr="Conception d'architectures réseaux LAN">Conception d'architectures réseaux LAN</li>
+                            <li data-en="Analysis, structuring and securing infrastructure" data-fr="Analyse, structuration et sécurisation de l'infrastructure">Analyse, structuration et sécurisation de l'infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-en="Featured Projects" data-fr="Projets">Projets</h2>
+            <div id="projectsGrid" class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <p data-en="Loading projects from GitHub..." data-fr="Chargement des projets depuis GitHub...">Chargement des projets depuis GitHub...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Get In Touch" data-fr="Me Contacter">Me Contacter</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-en="Let's Connect" data-fr="Restons en Contact">Restons en Contact</h3>
+                    <p data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision." data-fr="Je suis toujours ouverte à discuter de nouveaux projets, d'idées créatives ou d'opportunités pour faire partie de votre vision.">Je suis toujours ouverte à discuter de nouveaux projets, d'idées créatives ou d'opportunités pour faire partie de votre vision.</p>
+                    <div class="contact-items">
+                        <a href="mailto:regraisamia1@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>regraisamia1@gmail.com</span>
+                        </a>
+                        <a href="tel:+212622067493" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+212 622 067 493</span>
+                        </a>
+                        <a href="https://linkedin.com/in/regraisamia" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/regraisamia</span>
+                        </a>
+                        <a href="https://github.com/regraisamia" target="_blank" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/regraisamia</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" data-en-placeholder="Your Name" data-fr-placeholder="Votre Nom" placeholder="Votre Nom" required>
+                    <input type="email" data-en-placeholder="Your Email" data-fr-placeholder="Votre Email" placeholder="Votre Email" required>
+                    <textarea data-en-placeholder="Your Message" data-fr-placeholder="Votre Message" placeholder="Votre Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary" data-en="Send Message" data-fr="Envoyer">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Samia Regrai. <span data-en="All rights reserved." data-fr="Tous droits réservés.">Tous droits réservés.</span></p>
+            <div class="footer-links">
+                <a href="https://github.com/regraisamia" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/regraisamia" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:regraisamia1@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
