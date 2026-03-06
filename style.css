@@ -1183,3 +1183,215 @@ body {
     color: var(--text-secondary);
     line-height: 1.6;
 }
+
+/* Hero Decorative Blobs */
+.hero-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.blob {
+    position: absolute;
+    opacity: 0.15;
+    animation: blob-float 20s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+    bottom: -80px;
+    left: -80px;
+    animation-delay: -10s;
+}
+
+@keyframes blob-float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+    }
+}
+
+/* Hero Illustration */
+.hero-visual {
+    margin-bottom: 2rem;
+    animation: float-gentle 6s ease-in-out infinite;
+}
+
+.hero-illustration {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 10px 30px rgba(255, 107, 157, 0.2));
+}
+
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Decorative Section Dividers */
+.section-divider {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Skill Icons Enhancement */
+.skill-category h3 i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Project Icon Styling */
+.project-icon {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(255, 160, 122, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-icon::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 157, 0.1) 0%, transparent 70%);
+    animation: rotate-gradient 10s linear infinite;
+}
+
+@keyframes rotate-gradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.project-icon i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    z-index: 1;
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.3));
+}
+
+/* Decorative Quote Marks */
+.fun-fact::before {
+    content: '"';
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+.fun-fact {
+    position: relative;
+    padding-left: 3rem;
+}
+
+/* Animated Underlines for Links */
+.nav-link,
+.project-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before,
+.project-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before,
+.project-link:hover::before {
+    transform: translateX(0);
+}
+
+/* Stats Visual Enhancement */
+.stat-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(255, 160, 122, 0.05));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover::before {
+    transform: translateY(0);
+}
+
+/* Timeline Visual Enhancement */
+.timeline::before {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+/* Contact Form Visual Enhancement */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+}
+
+/* Certification Badge Enhancement */
+.cert-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(255, 107, 157, 0.2));
+}
+
+/* Education Card Enhancement */
+.edu-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.2));
+}
