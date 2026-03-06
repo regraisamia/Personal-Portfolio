@@ -98,30 +98,29 @@ async function fetchGitHubProjects() {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
         
         if (!response.ok) {
-            throw new Error('API request failed');
+            throw new Error(`API Error: ${response.status}`);
         }
         
         const repos = await response.json();
         
         const filteredRepos = repos.filter(repo => {
             const name = repo.name.toLowerCase();
-            return name !== 'regraisamia' && name !== 'regrai-samia' && name !== 'e-commerce';
+            return name !== 'regraisamia' && name !== 'regrai-samia' && name !== 'e-commerce' && name !== 'personal-portfolio';
         });
         
         if (filteredRepos.length === 0) {
-            projectsGrid.innerHTML = '<p>No projects available</p>';
+            projectsGrid.innerHTML = `<p style="text-align: center; padding: 2rem;">${currentLang === 'fr' ? 'Aucun projet disponible' : 'No projects available'}</p>`;
             return;
         }
         
-        // Fetch README for each repo
+        // Fetch README for each repo (limit to first 10 to avoid rate limits)
         const projectsWithReadme = await Promise.all(
-            filteredRepos.map(async (repo) => {
+            filteredRepos.slice(0, 10).map(async (repo) => {
                 try {
                     const readmeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/readme`);
                     if (readmeResponse.ok) {
                         const readmeData = await readmeResponse.json();
                         const readmeContent = atob(readmeData.content);
-                        // Extract first paragraph or first 200 chars
                         const description = extractDescription(readmeContent);
                         return { ...repo, description: description || repo.description };
                     }
@@ -135,8 +134,8 @@ async function fetchGitHubProjects() {
         displayProjects(projectsWithReadme);
         
     } catch (error) {
-        console.log('Error fetching projects:', error);
-        projectsGrid.innerHTML = '<p>Unable to load projects</p>';
+        console.error('Error fetching projects:', error);
+        projectsGrid.innerHTML = `<p style="text-align: center; padding: 2rem; color: var(--text-color);">${currentLang === 'fr' ? 'Impossible de charger les projets. Visitez ' : 'Unable to load projects. Visit '}<a href="https://github.com/regraisamia" target="_blank" style="color: var(--primary-color);">GitHub</a></p>`;
     }
 }
 
