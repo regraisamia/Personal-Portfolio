@@ -112,7 +112,7 @@
             <h2 class="section-title" data-en="About Me" data-fr="À Propos">À Propos</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <div class="fun-fact" data-en="💡 Fun fact: I speak 4 languages - Arabic, French, English & Tamazight!" data-fr="💡 Fun fact: Je parle 4 langues - Arabe, Français, Anglais & Tamazight!">💡 Fun fact: Je parle 4 langues - Arabe, Français, Anglais & Tamazight!</div>
+                    <div class="fun-fact" data-en="💡 Fun fact: I love turning data into stories and insights!" data-fr="💡 Fun fact: J'adore transformer les données en histoires et insights!">💡 Fun fact: J'adore transformer les données en histoires et insights!</div>
                     <p data-en="Master's student in Business Intelligence & Big Data Analytics at Chouaib Doukkali University. Passionate about artificial intelligence, machine learning and big data analytics." data-fr="Étudiante en Master Recherche Business Intelligence & Big Data Analytics à l'Université Chouaib Doukkali. Passionnée par l'intelligence artificielle, le machine learning et l'analyse de données massives.">Étudiante en Master Recherche Business Intelligence & Big Data Analytics à l'Université Chouaib Doukkali. Passionnée par l'intelligence artificielle, le machine learning et l'analyse de données massives.</p>
                     <p data-en="My expertise covers intelligent application development using Python, NLP, multi-agent systems, and data visualization with Power BI. Experience in web development, databases and computer networks." data-fr="Mon expertise couvre le développement d'applications intelligentes utilisant Python, NLP, les systèmes multi-agents, ainsi que la visualisation de données avec Power BI. Expérience en développement web, bases de données et réseaux informatiques.">Mon expertise couvre le développement d'applications intelligentes utilisant Python, NLP, les systèmes multi-agents, ainsi que la visualisation de données avec Power BI. Expérience en développement web, bases de données et réseaux informatiques.</p>
                     <div class="journey-timeline">
@@ -137,6 +137,10 @@
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>El Jadida, Maroc</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <span data-en="Arabic, French, English, Tamazight" data-fr="Arabe, Français, Anglais, Tamazight">Arabe, Français, Anglais, Tamazight</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
@@ -514,10 +518,10 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" data-en-placeholder="Your Name" data-fr-placeholder="Votre Nom" placeholder="Votre Nom" required>
-                    <input type="email" data-en-placeholder="Your Email" data-fr-placeholder="Votre Email" placeholder="Votre Email" required>
-                    <textarea data-en-placeholder="Your Message" data-fr-placeholder="Votre Message" placeholder="Votre Message" rows="5" required></textarea>
+                <form class="contact-form" action="https://formspree.io/f/xbdzjybz" method="POST">
+                    <input type="text" name="name" data-en-placeholder="Your Name" data-fr-placeholder="Votre Nom" placeholder="Votre Nom" required>
+                    <input type="email" name="email" data-en-placeholder="Your Email" data-fr-placeholder="Votre Email" placeholder="Votre Email" required>
+                    <textarea name="message" data-en-placeholder="Your Message" data-fr-placeholder="Votre Message" placeholder="Votre Message" rows="5" required></textarea>
                     <button type="submit" class="btn btn-primary" data-en="Send Message" data-fr="Envoyer">Envoyer</button>
                 </form>
             </div>

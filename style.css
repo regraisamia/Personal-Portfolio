@@ -1786,3 +1786,138 @@ body.dark-mode .cert-icon i,
 body.dark-mode .edu-icon i {
     color: var(--accent-color);
 }
+
+
+/* Dark Mode Color Fixes */
+[data-theme="dark"] {
+    --bg-color: #2b2b2b;
+    --bg-secondary: #3a3a3a;
+    --text-color: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --border-color: #4a4a4a;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .skill-category, 
+[data-theme="dark"] .cert-badge, 
+[data-theme="dark"] .education-card, 
+[data-theme="dark"] .timeline-content, 
+[data-theme="dark"] .project-card {
+    background: rgba(58, 58, 58, 0.9) !important;
+    border: 1px solid rgba(255, 182, 193, 0.2);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .skill-category:hover, 
+[data-theme="dark"] .cert-badge:hover, 
+[data-theme="dark"] .education-card:hover, 
+[data-theme="dark"] .timeline-content:hover, 
+[data-theme="dark"] .project-card:hover {
+    background: rgba(74, 74, 74, 0.95) !important;
+}
+
+[data-theme="dark"] .stat-item {
+    background: rgba(58, 58, 58, 0.8);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .stat-item:hover {
+    background: rgba(74, 74, 74, 0.9);
+}
+
+[data-theme="dark"] .contact-form input, 
+[data-theme="dark"] .contact-form textarea {
+    background: rgba(58, 58, 58, 0.8);
+    border-color: rgba(255, 182, 193, 0.3);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .contact-form input::placeholder,
+[data-theme="dark"] .contact-form textarea::placeholder {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .contact-form input:focus, 
+[data-theme="dark"] .contact-form textarea:focus {
+    background: rgba(74, 74, 74, 0.95);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .timeline-content h3,
+[data-theme="dark"] .edu-content h3,
+[data-theme="dark"] .cert-info h4 {
+    color: #ffb6c1;
+}
+
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .timeline-content h4,
+[data-theme="dark"] .timeline-content li,
+[data-theme="dark"] .edu-content h4,
+[data-theme="dark"] .edu-desc,
+[data-theme="dark"] .cert-info p,
+[data-theme="dark"] .about-text p,
+[data-theme="dark"] .journey-text {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .skill-tag {
+    background: rgba(43, 43, 43, 0.8);
+    border-color: rgba(255, 182, 193, 0.3);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .project-tag {
+    background: rgba(43, 43, 43, 0.8);
+    color: #ffb6c1;
+}
+
+[data-theme="dark"] .info-item {
+    background: rgba(58, 58, 58, 0.8);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .contact-item {
+    background: rgba(58, 58, 58, 0.8);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .fun-fact {
+    background: rgba(58, 58, 58, 0.5);
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .journey-item {
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .journey-year {
+    color: #ffb6c1;
+}
+
+[data-theme="dark"] .stat-label {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .hero-subtitle,
+[data-theme="dark"] .hero-description {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .project-link {
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .project-link:hover {
+    color: #ffb6c1;
+}
+
+[data-theme="dark"] .cert-icon i,
+[data-theme="dark"] .edu-icon i {
+    color: #ffb6c1;
+}
+
+[data-theme="dark"] .skill-category h3 {
+    color: #ffb6c1;
+}
