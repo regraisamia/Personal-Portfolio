@@ -94,16 +94,6 @@ async function fetchGitHubProjects() {
     const username = 'regraisamia';
     const projectsGrid = document.getElementById('projectsGrid');
     
-    // Fallback projects if API fails
-    const fallbackProjects = [
-        { name: 'CV-Parsing-Job-Recommendation', language: 'Python', description: 'Application intelligente de parsing de CV avec NLP et ML pour la recommandation d\'emploi', topics: ['nlp', 'machine-learning', 'flask'] },
-        { name: 'Multi-Agent-Delivery-System', language: 'Python', description: 'Système multi-agents de livraison utilisant CrewAI et optimisation d\'itinéraires GPS', topics: ['ai', 'multi-agent', 'optimization'] },
-        { name: 'Stock-Management-App', language: 'JavaScript', description: 'Application web de gestion de stock avec base de données relationnelle', topics: ['web', 'database', 'crud'] },
-        { name: 'Printing-Management-System', language: 'PHP', description: 'Système de gestion d\'imprimerie avec gestion des commandes et clients', topics: ['php', 'mysql', 'web'] },
-        { name: 'Face-Detection-App', language: 'Python', description: 'Application de détection faciale avec Python et OpenCV', topics: ['computer-vision', 'opencv', 'python'] },
-        { name: 'Data-Visualization-Projects', language: 'Python', description: 'Projets de visualisation de données avec Matplotlib et Seaborn', topics: ['data-viz', 'matplotlib', 'analytics'] }
-    ];
-    
     try {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
         
@@ -119,23 +109,65 @@ async function fetchGitHubProjects() {
         });
         
         if (filteredRepos.length === 0) {
-            displayProjects(fallbackProjects);
+            projectsGrid.innerHTML = '<p>No projects available</p>';
             return;
         }
         
-        displayProjects(filteredRepos.slice(0, 6));
+        // Fetch README for each repo
+        const projectsWithReadme = await Promise.all(
+            filteredRepos.map(async (repo) => {
+                try {
+                    const readmeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/readme`);
+                    if (readmeResponse.ok) {
+                        const readmeData = await readmeResponse.json();
+                        const readmeContent = atob(readmeData.content);
+                        // Extract first paragraph or first 200 chars
+                        const description = extractDescription(readmeContent);
+                        return { ...repo, description: description || repo.description };
+                    }
+                } catch (error) {
+                    console.log(`No README for ${repo.name}`);
+                }
+                return repo;
+            })
+        );
+        
+        displayProjects(projectsWithReadme);
         
     } catch (error) {
-        console.log('Using fallback projects');
-        displayProjects(fallbackProjects);
+        console.log('Error fetching projects:', error);
+        projectsGrid.innerHTML = '<p>Unable to load projects</p>';
     }
+}
+
+function extractDescription(readmeContent) {
+    // Remove markdown headers
+    let text = readmeContent.replace(/^#+\s+.+$/gm, '');
+    // Remove code blocks
+    text = text.replace(/```[\s\S]*?```/g, '');
+    // Remove inline code
+    text = text.replace(/`[^`]+`/g, '');
+    // Remove links
+    text = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    // Remove images
+    text = text.replace(/!\[[^\]]*\]\([^)]+\)/g, '');
+    // Get first meaningful paragraph
+    const paragraphs = text.split('\n\n').filter(p => p.trim().length > 20);
+    if (paragraphs.length > 0) {
+        let desc = paragraphs[0].trim().replace(/\n/g, ' ');
+        if (desc.length > 150) {
+            desc = desc.substring(0, 150) + '...';
+        }
+        return desc;
+    }
+    return null;
 }
 
 function displayProjects(projects) {
     const projectsGrid = document.getElementById('projectsGrid');
     
     projectsGrid.innerHTML = projects.map(repo => {
-        const description = repo.description || (currentLang === 'fr' ? 'Aucune description disponible' : 'No description available');
+        const description = repo.description || (currentLang === 'fr' ? 'Projet GitHub' : 'GitHub Project');
         const languageIcon = getLanguageIcon(repo.language);
         const repoUrl = repo.html_url || `https://github.com/regraisamia/${repo.name}`;
         
@@ -250,3 +282,12 @@ function animateStats() {
         }, 30);
     });
 }
+
+// Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    scrollProgress.style.width = scrollPercentage + '%';
+});
