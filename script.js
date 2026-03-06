@@ -246,13 +246,15 @@ document.querySelectorAll('.skill-category, .timeline-item, .project-card').forE
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Script loaded successfully');
     updateLanguage(currentLang);
-    fetchGitHubProjects();
     animateStats();
+    fetchGitHubProjects();
 });
 
 // Animate Stats Counter
 function animateStats() {
+    console.log('Animating stats...');
     const stats = document.querySelectorAll('.stat-number');
     
     stats.forEach(stat => {
