@@ -4,7 +4,8 @@ let currentLang = localStorage.getItem('lang') || 'fr';
 function updateLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    document.getElementById('langText').textContent = lang === 'fr' ? 'EN' : 'FR';
+    const langText = document.getElementById('langText');
+    if (langText) langText.textContent = lang === 'fr' ? 'EN' : 'FR';
     
     document.querySelectorAll('[data-en][data-fr]').forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
@@ -22,72 +23,13 @@ function updateLanguage(lang) {
     });
 }
 
-document.getElementById('langToggle').addEventListener('click', () => {
-    updateLanguage(currentLang === 'fr' ? 'en' : 'fr');
-});
-
-// Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-
-const currentTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', currentTheme);
-updateThemeIcon(currentTheme);
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
-
 function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-}
-
-// Mobile Navigation
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Navbar Scroll Effect
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        if (icon) icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
     }
-});
+}
 
 // Fetch GitHub Projects with timeout
 async function fetchGitHubProjects() {
@@ -212,41 +154,111 @@ function getLanguageIcon(language) {
     return icons[language] || 'fas fa-code';
 }
 
-// Contact Form
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const message = currentLang === 'fr' 
-        ? 'Merci pour votre message ! Je vous répondrai bientôt.' 
-        : 'Thank you for your message! I will get back to you soon.';
-    
-    alert(message);
-    contactForm.reset();
-});
-
-// Intersection Observer for Animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.skill-category, .timeline-item, .project-card').forEach(el => {
-    observer.observe(el);
-});
-
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Script loaded successfully');
+    
+    // Theme Toggle
+    const html = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
+    
+    // Language Toggle
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            updateLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        });
+    }
+    
+    // Mobile Navigation
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu) navMenu.classList.remove('active');
+        });
+    });
+    
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (navbar) {
+            navbar.style.boxShadow = currentScroll > 100 
+                ? '0 10px 30px rgba(0, 0, 0, 0.1)' 
+                : '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        }
+    });
+    
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.getElementById('scrollProgress');
+        if (scrollProgress) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        }
+    });
+    
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = currentLang === 'fr' 
+                ? 'Merci pour votre message ! Je vous répondrai bientôt.' 
+                : 'Thank you for your message! I will get back to you soon.';
+            alert(message);
+            contactForm.reset();
+        });
+    }
+    
+    // Intersection Observer
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.skill-category, .timeline-item, .project-card').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Initialize
     updateLanguage(currentLang);
     animateStats();
     fetchGitHubProjects();
@@ -273,11 +285,3 @@ function animateStats() {
     });
 }
 
-// Scroll Progress Bar
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scrollProgress');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    scrollProgress.style.width = scrollPercentage + '%';
-});
